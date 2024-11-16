@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juglares del Vallenato</title>
+    <img src="https://www.grupovallenato.com.co/images/1.png" alt="Música Vallenata">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #e0c371;
+            color: #fffcfc;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #a16b06e7; 
+        }
+        .container {
+            margin: auto;
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #a70000b9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 50%;
+            height: auto;
+            border-radius: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"] {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            background-color: rgb(255, 189, 68);
+            text-align: center;
+        }
+            input[type="text"]:hover, input[type="email"]:hover, input[type="tel"]:hover {
+                background-color: #ffffff; 
+
+        }
+        input[type="submit"] {
+            background-color: #f3b645; 
+            color: rgb(255, 255, 255);
+            border: 1px solid #000000;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #2bff01; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a la Página de Juglares del Vallenato</h1>
+    <div class="container">
+        <img src="https://media.tenor.com/AcDDWEscRQUAAAAM/chair-thrown.gif" alt="Música Vallenata"> 
+
+        <p>🥳🎸🎶Completa el formulario para contactarnos 📝☜(ﾟヮﾟ☜):</p>
+        
+        <form id="contactForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="localidad">Localidad o Barrio:</label>
+            <input type="text" id="localidad" name="localidad" required>
+
+            <label for="dirección">Dirección:</label>
+            <input type="text" id="dirección" name="dirección" required>
+
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="número">Número:</label>
+            <input type="tel" id="número" name="número" required>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').onsubmit = function(event) {
+            event.preventDefault(); 
+            const nombre = document.getElementById('nombre').value;
+            const localidad = document.getElementById('localidad').value;
+            const direccion = document.getElementById('dirección').value;
+            const correo = document.getElementById('correo').value;
+            const numero = document.getElementById('número').value;
+
+            const mensaje = `Hola, mi nombre es ${nombre}. Soy de ${localidad}, mi dirección es ${direccion}, mi correo es ${correo}, y mi número es ${numero}.`;
+            
+            const url = `https://wa.me/3102728245?text=${encodeURIComponent(mensaje)}`; 
+            window.open(url, '_blank');
+        };
+    </script>
+</body>
+</html>
+
